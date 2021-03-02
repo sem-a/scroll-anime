@@ -1,0 +1,784 @@
+/** 
+ *  font-family: 'Open Sans', sans-serif;
+ *  font-family: 'Roboto', sans-serif; 
+*/
+
+.container {
+    /*фиксированный контейнер контентной части*/
+    width: 1280px;
+    margin: 0 auto; /*середина*/
+}
+
+@media screen and (max-width: 1300px) {
+    .container {
+        /*так как появляются лишнии 10 пикселей*/
+        width: 1260px;
+        margin: 0 auto;
+    }
+}
+
+/*-----------header-------------*/
+.header {
+    background: url(../img/background_header.jpg);
+}
+.header__title {
+    /*заголовок*/
+    text-align: center;
+    position: relative;
+}
+.title__image {
+    /*стрелочка*/
+    position: absolute;
+    top: 420px;
+    left: 365px;
+}
+.title__text {
+    /*сам заголовок*/
+    padding-top: 410px;
+}
+.title__text h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    color: white;
+}
+.header__text {
+    /*текст под заголовком*/
+    text-align: center;
+    margin-top: 45px;
+}
+.header__text p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+    color: white;
+}
+
+.header__down {
+    /*стрелочка*/
+    width: 5%;
+    margin: 0 auto;
+}
+.arrow-7 {
+    /*анимация стрелочки*/
+    margin-top: 390px;
+    padding-bottom: 100px;
+}
+.arrow-7 span {
+    /*рисунок самой стрелки*/
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid #328dfc;
+    border-right: 5px solid #328dfc;
+    transform: rotate(45deg);
+    margin-top: -15px;
+    animation: arrow-7 2s infinite;
+}
+.arrow-7 span:nth-child(2) {
+    /*настройки анимации*/
+    animation-delay: -0.2s;
+}
+@keyframes arrow-7 {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+/*-------------------------------*/
+
+/*------------main--------------*/
+.main__title {
+    /*все заголовки в main*/
+    margin-top: 150px;
+    text-align: center;
+
+    transform: translate(0px, 200%);
+    opacity: 0;
+    transition: all 0.2s ease 0s;
+}
+.main__title h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: black;
+}
+.main__title._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+.main__subtitle {
+    /*все подписи под заголовком в main*/
+    margin-top: 60px;
+    text-align: center;
+
+    transform: translate(0px, 200%);
+    opacity: 0;
+    transition: all 0.2s ease 0.2s;
+}
+.main__subtitle p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 38px;
+    color: black;
+}
+.main__subtitle._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+/*--------- Почему именно мы? -------------*/
+.about__card {
+    /*три крты об компании*/
+    margin-top: 135px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+.about__card div.items {
+    /* управление анимацией*/
+    transform: translate(0px, 100%);
+    transition: all 0.2s ease 0s;
+    opacity: 0;
+}
+.about__card._active div.items:nth-child(1) {
+    /*поочередное появление*/
+    transition: all 0.2s ease 0.2s;
+}
+.about__card._active div.items:nth-child(2) {
+    transition: all 0.2s ease 0.4s;
+}
+.about__card._active div.items:nth-child(3) {
+    transition: all 0.2s ease 0.6s;
+}
+.about__card._active div.items {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+.items {
+    /*карточки*/
+    margin: 0 90px;
+}
+.card__item {
+    /*фото в карточке*/
+    text-align: center;
+}
+.card__item img {
+    height: 130px;
+}
+.card__text {
+    /*текст в карточке*/
+    margin-top: 10px;
+    text-align: center;
+}
+.card__text p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    color: black;
+}
+/*----------------------------*/
+
+/*----------- Как получить услугу ----------*/
+.info {
+    /*секция инфо*/
+    background: #e1e1e5;
+    padding-bottom: 100px;
+}
+.info__title {
+    /*все заголовки в инфо*/
+    padding-top: 100px;
+    text-align: center;
+
+    transform: translate(0px, 100%);
+    opacity: 0;
+    transition: all 0.2s ease 0s;
+}
+.info__title h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: black;
+}
+.info__title._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+.info__card {
+    /*блок карточек*/
+    display: flex;
+    justify-content: center;
+    margin-top: 125px;
+}
+.card__items {
+    /*карточки*/
+    margin: 0 40px;
+    text-align: center;
+}
+.item__image {
+    text-align: center;
+
+    transform: translate(0px, 100%);
+    opacity: 0;
+    transition: all 0.3s ease 0.2s;
+}
+.item__image._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+.item__text {
+    /*текст карточки*/
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+.item__text._1 {
+    /*анимация текста карточек*/
+    transform: translate(0px, 400%);
+    opacity: 0;
+    transition: all 0.3s ease 0.2s;
+}
+.item__text._1._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+.item__text._2 {
+    transform: translate(0px, 400%);
+    opacity: 0;
+    transition: all 0.3s ease 0.4s;
+}
+.item__text._2._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+.item__text._3 {
+    transform: translate(0px, 400%);
+    opacity: 0;
+    transition: all 0.3s ease 0.6s;
+}
+.item__text._3._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+.item__text._4 {
+    transform: translate(0px, 400%);
+    opacity: 0;
+    transition: all 0.3s ease 0.8s;
+}
+.item__text._4._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+/*--------------------------------------*/
+
+/*------------ как выбрать стиль --------*/
+.style {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.style__title {
+    /*все заголовки в main*/
+    text-align: center;
+
+    transform: translate(0px, 200%);
+    opacity: 0;
+    transition: all 0.2s ease 0s;
+}
+.style__title h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: black;
+}
+.style__title._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+.style__subtitle {
+    /*все подписи под заголовком в main*/
+    text-align: center;
+    margin: 60px auto;
+    width: 70%;
+
+    transform: translate(0px, 200%);
+    opacity: 0;
+    transition: all 0.2s ease 0.2s;
+}
+.style__subtitle p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: black;
+}
+.style__subtitle._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+.style__card {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.style__item {
+    margin: 0 10px;
+}
+.style__card._1 div.style__item {
+    /*первая строка фоток*/
+    transform: translate(0px, 100%);
+    opacity: 0;
+    transition: all 0.2s ease 0.2s;
+}
+.style__card._1._active div.style__item:nth-child(1) {
+    transition: all 0.2s ease 0.2s;
+}
+.style__card._1._active div.style__item:nth-child(2) {
+    transition: all 0.2s ease 0.4s;
+}
+.style__card._1._active div.style__item:nth-child(3) {
+    transition: all 0.2s ease 0.6s;
+}
+.style__card._1._active div.style__item {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+/*-------------------------------------*/
+
+/*-------- Остались вопросы? ----------*/
+
+.questions {
+    margin-top: 100px;
+    padding-bottom: 100px;
+}
+.questions__title {
+    /*все заголовки в main*/
+    text-align: center;
+
+    transform: translate(0px, 200%);
+    opacity: 0;
+    transition: all 0.2s ease 0s;
+}
+.questions__title h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: black;
+}
+.questions__title._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+.questions__subtitle {
+    /*все подписи под заголовком в main*/
+    text-align: center;
+    margin: 60px auto;
+    width: 70%;
+
+    transform: translate(0px, 200%);
+    opacity: 0;
+    transition: all 0.2s ease 0.2s;
+}
+.questions__subtitle p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: black;
+}
+.questions__subtitle._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+/*-------------------------------------*/
+/*---------footer------------*/
+
+.footer {
+    min-height: 150px;
+    position: relative;
+}
+.footer__center {
+    text-align: center;
+}
+.footer__center p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #9191a7;
+}
+.footer__item {
+    position: absolute;
+    top: 25px;
+}
+.footer__item._1 {
+    left: 20px;
+}
+.footer__item._2 {
+    right: 20px;
+}
+
+/*-----------------------------*/
+
+/*-------форма---------*/
+
+.form {
+    text-align: center;
+    display: block;
+    margin: 100px auto;
+}
+.input input {
+    width: 610px;
+    height: 60px;
+    margin-top: 20px;
+    border: 3px solid #9191a7;
+    border-radius: 10px;
+    padding: 0 20px;
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+.input textarea {
+    width: 610px;
+    height: 300px;
+    margin-top: 20px;
+    border: 3px solid #9191a7;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+.button button {
+    margin-top: 20px;
+    background-color: #9191a7;
+    width: 175px;
+    height: 40px;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    color: #fff;
+    border: 2px solid #7b7b8d;
+    border-radius: 10px;
+}
+
+/* анимация формы*/
+
+.input input {
+    transform: translate(0px, 200%);
+    opacity: 0;
+    transition: all 0.2s ease 0.2s;
+}
+.input._active input {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+.input textarea {
+    transform: translate(0px, 50%);
+    opacity: 0;
+    transition: all 0.2s ease 0.2s;
+}
+.input._active textarea {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+/*--------скролл---------------*/
+
+::-webkit-scrollbar-button {
+    background-image: url("");
+    background-repeat: no-repeat;
+    width: 6px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #32312e;
+    box-shadow: 0px 0px 3px #000 inset;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #328dfc;
+    box-shadow: 0px 1px 1px #fff inset;
+    background-image: url("https://yraaa.ru/_pu/24/59610063.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+::-webkit-resizer {
+    background-image: url("");
+    background-repeat: no-repeat;
+    width: 7px;
+    height: 0px;
+}
+
+::-webkit-scrollbar {
+    width: 11px;
+}
+
+/*-----------------------------*/
+
+/*----------- адаптив --------------*/
+
+@media screen and (max-width: 600px) {
+    .container {
+        /*фиксированный контейнер контентной части*/
+        width: 300px;
+        margin: 0 auto; /*середина*/
+    }
+
+    /*header*/
+
+    .header {
+        background: url(../img/background_header.jpg) no-repeat center center;
+    }
+    .title__image {
+        /*стрелочка*/
+        display: none;
+    }
+    .title__text {
+        /*сам заголовок*/
+        padding-top: 200px;
+    }
+    .header__text p {
+        font-size: 16px;
+    }
+    .arrow-7 {
+        /*анимация стрелочки*/
+        margin-top: 150px;
+        padding-bottom: 100px;
+    }
+    /*-----------------------*/
+
+    /*почему именно мы?*/
+
+    .main__title {
+        /*все заголовки в main*/
+        margin-top: 50px;
+    }
+    .main__title h2 {
+        font-size: 30px;
+    }
+    .main__subtitle {
+        /*все подписи под заголовком в main*/
+        margin-top: 20px;
+        text-align: center;
+    }
+    .main__subtitle p {
+        font-size: 20px;
+    }
+    .about__card {
+        /*три крты об компании*/
+        margin-top: 50px;
+        display: block;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    .items {
+        /*карточки*/
+        margin: 40px 0;
+    }
+    .card__item {
+        /*фото в карточке*/
+        text-align: center;
+    }
+    .card__item img {
+        height: 100px;
+    }
+    .card__text {
+        /*текст в карточке*/
+        margin-top: 10px;
+        text-align: center;
+    }
+    .card__text p {
+        font-size: 20px;
+    }
+
+    /*-------------------------*/
+
+    /*Как получить услугу*/
+
+    .info {
+        /*секция инфо*/
+        background: #e1e1e5;
+        padding-bottom: 50px;
+    }
+    .info__title {
+        /*все заголовки в инфо*/
+        padding-top: 50px;
+    }
+    .info__title h2 {
+        font-size: 30px;
+    }
+    .info__card {
+        /*блок карточек*/
+        display: block;
+        margin-top: 75px;
+    }
+    .card__items {
+        /*карточки*/
+        margin: 40px 0;
+        text-align: center;
+    }
+    .item__image {
+        text-align: center;
+    }
+    .item__text {
+        /*текст карточки*/
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    /*------------------------*/
+
+    /*как выбрать стиль*/
+
+    .style {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .style__title h2 {
+        font-size: 30px;
+    }
+    .style__subtitle {
+        /*все подписи под заголовком в main*/
+        margin: 30px auto;
+    }
+    .style__subtitle p {
+        font-size: 20px;
+    }
+    .style__card {
+        margin-top: 50px;
+        display: block;
+    }
+    .style__item {
+        margin: 20px 0;
+        text-align: center;
+    }
+    .style__item img {
+        width: 300px;
+    }
+    /*-------------------*/
+
+    /*Остались вопросы*/
+
+    .questions {
+        margin-top: 50px;
+        padding-bottom: 50px;
+    }
+    .questions__title h2 {
+        font-size: 30px;
+    }
+    .questions__subtitle {
+        /*все подписи под заголовком в main*/
+        text-align: center;
+        margin: 20px auto;
+    }
+    .questions__subtitle p {
+        font-size: 20px;
+    }
+
+    /*-----------------*/
+
+    /*форма*/
+
+    .form {
+        margin: 50px auto;
+    }
+    .input input {
+        width: 300px;
+        height: 40px;
+        padding: 0 10px;
+        font-size: 20px;
+    }
+    .input textarea {
+        width: 300px;
+        height: 100px;
+        padding: 0 10px;
+        font-size: 20px;
+        padding: 10px 10px;
+    }
+    .button button {
+        margin-top: 20px;
+        width: 100px;
+        height: 40px;
+        font-size: 16px;
+    }
+    /*---------------------*/
+
+    /*футер*/
+
+    .footer {
+        min-height: 100px;
+        position: relative;
+    }
+    .footer__center p {
+        font-size: 14px;
+    }
+    .footer__item {
+        display: none;
+    }
+
+    /*--------------------*/
+
+
+
+    /*анимация некоторых блоков*/
+
+    .item__image {
+        transform: translate(0px, 100%);
+        opacity: 0;
+        transition: all 0.3s ease 0s;
+    }
+    .item__image._active {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+    .item__text._1 {
+        /*анимация текста карточек*/
+        transform: translate(0px, 400%);
+        opacity: 0;
+        transition: all 0.3s ease 0s;
+    }
+    .item__text._1._active {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+    .item__text._2 {
+        transform: translate(0px, 400%);
+        opacity: 0;
+        transition: all 0.3s ease 0s;
+    }
+    .item__text._2._active {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+    .item__text._3 {
+        transform: translate(0px, 400%);
+        opacity: 0;
+        transition: all 0.3s ease 0s;
+    }
+    .item__text._3._active {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+    .item__text._4 {
+        transform: translate(0px, 400%);
+        opacity: 0;
+        transition: all 0.3s ease 0s;
+    }
+    .item__text._4._active {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+
+    /*--------------------------*/
+}
